@@ -56,7 +56,7 @@ class EnterMacroFragment : Fragment() {
 
         enterMacroFragmentBinding?.submit?.setOnClickListener {
             if (macroText.isNotBlank() || fullForm.isNotBlank()){
-                responseViewModel.buildRestService()
+                responseViewModel.init()
                 responseViewModel.getAcronym(macroText.toString(),fullForm.toString()
                 ).observe(this) {
                     when (it.status) {

@@ -14,11 +14,11 @@ class ResponseViewModel: ViewModel() {
 
     private var restApiHelper: RestAPIService? = null
 
-    fun buildRestService (){
+    fun init(){
         restApiHelper = RestAPIBuilder.build()
     }
 
-    fun getAcronym(sf: String, lf: String) = liveData(Dispatchers.IO){
+    fun getAcronym(sf: String, lf: String) = liveData(Dispatchers.Main){
         emit(RestAPIState.loading(data = null))
         try {
             val response = restApiHelper?.getAcronyms(sf, lf)

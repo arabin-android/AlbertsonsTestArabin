@@ -36,9 +36,9 @@ class RestAPIBuilder {
             interceptor.level = HttpLoggingInterceptor.Level.BODY
             return OkHttpClient.Builder()
                 .addInterceptor(interceptor)
-                .connectTimeout(5, TimeUnit.MINUTES)
-                .writeTimeout(1, TimeUnit.MINUTES)
-                .readTimeout(1, TimeUnit.MINUTES)
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(true) //In case of a request failure , stop Retrofit from trying the request again automatically
                 .build()
         }

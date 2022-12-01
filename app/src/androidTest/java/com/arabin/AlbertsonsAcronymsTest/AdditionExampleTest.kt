@@ -11,8 +11,11 @@ import org.junit.runner.RunWith
 class AlbersonsTestCase {
 
     @Test
-    fun testNavOptionIsworkingFine(){
-        assertEquals(androidx.navigation.ui.R.anim.nav_default_enter_anim, EnterMacroFragment.getNavigationOptions()?.enterAnim)
+    fun testNavOptionIsworkingFine() {
+        assertEquals(
+            androidx.navigation.ui.R.anim.nav_default_enter_anim,
+            EnterMacroFragment.getNavigationOptions()?.enterAnim
+        )
     }
 
 }
