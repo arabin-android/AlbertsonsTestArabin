@@ -4,9 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.arabin.AlbertsonsAcronymsTest.databinding.DetailsItemsCellBinding
-import com.arabin.AlbertsonsAcronymsTest.databinding.FragmentDetailsMacroBinding
-import com.arabin.AlbertsonsAcronymsTest.databinding.ItemsSubListItemBinding
-import com.arabin.AlbertsonsAcronymsTest.retrofit.Lf
 import com.arabin.AlbertsonsAcronymsTest.retrofit.ResponseItem
 
 class MainAdapter(items: ArrayList<ResponseItem>) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {

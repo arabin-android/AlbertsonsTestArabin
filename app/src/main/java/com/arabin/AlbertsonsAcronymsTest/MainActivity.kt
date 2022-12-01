@@ -15,7 +15,7 @@ import com.arabin.AlbertsonsAcronymsTest.retrofit.RestAPIStatus
 import com.arabin.AlbertsonsAcronymsTest.retrofit.viewmodel.ResponseViewModel
 import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity(), ShareDataInterface {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
@@ -39,7 +39,4 @@ class MainActivity : AppCompatActivity(), ShareDataInterface {
                 || super.onSupportNavigateUp()
     }
 
-    override fun setResult(data: Response) {
-
-    }
 }

@@ -23,7 +23,7 @@ class RestAPIBuilder {
         fun buildRestApi(): Retrofit{
             return Retrofit.Builder().baseUrl(ACRONYM_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-//                .client(okhttpClient())
+                .client(okhttpClient())
                 .build()
         }
 
