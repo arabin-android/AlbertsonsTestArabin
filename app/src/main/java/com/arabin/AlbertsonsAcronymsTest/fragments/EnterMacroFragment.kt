@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
@@ -23,7 +24,7 @@ import com.arabin.AlbertsonsAcronymsTest.retrofit.viewmodel.ShareDataViewModel
 class EnterMacroFragment : Fragment() {
 
 
-    private lateinit var responseViewModel : ResponseViewModel
+    private val responseViewModel: ResponseViewModel by viewModels()
     private lateinit var shareDataViewModel: ShareDataViewModel
 
 
@@ -40,49 +41,62 @@ class EnterMacroFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        responseViewModel = requireActivity().run {
-            ViewModelProvider(requireActivity(), defaultViewModelProviderFactory).get(ResponseViewModel::class.java)
-        }
         shareDataViewModel = requireActivity().run {
-            ViewModelProvider(requireActivity(), defaultViewModelProviderFactory).get(ShareDataViewModel::class.java)
+            ViewModelProvider(
+                requireActivity(),
+                defaultViewModelProviderFactory
+            )[ShareDataViewModel::class.java]
         }
     }
 
     override fun onResume() {
         super.onResume()
 
-        val macroText = enterMacroFragmentBinding?.macroText?.text?:""
-        val fullForm = enterMacroFragmentBinding?.fullForm?.text?:""
+        val macroText = enterMacroFragmentBinding?.macroText?.text ?: ""
+        val fullForm = enterMacroFragmentBinding?.fullForm?.text ?: ""
 
         enterMacroFragmentBinding?.submit?.setOnClickListener {
-            if (macroText.isNotBlank() || fullForm.isNotBlank()){
+            if (macroText.isNotBlank() || fullForm.isNotBlank()) {
                 responseViewModel.init()
-                responseViewModel.getAcronym(macroText.toString(),fullForm.toString()
-                ).observe(this) {
+                responseViewModel.getAcronym(
+                    macroText.toString(), fullForm.toString()
+                ).observe(viewLifecycleOwner) {
                     when (it.status) {
                         RestAPIStatus.SUCCESS -> {
                             val data = it.data
                             data?.let { it1 -> shareDataViewModel.setResponse(it1) }
-                            val navController = Navigation.findNavController(requireActivity(),
-                                R.id.nav_host_fragment)
-                            navController.navigate(R.id.details_fragment, null, getNavigationOptions())
+                            val navController = Navigation.findNavController(
+                                requireActivity(),
+                                R.id.nav_host_fragment
+                            )
+                            navController.navigate(
+                                R.id.details_fragment,
+                                null,
+                                getNavigationOptions()
+                            )
                         }
                         RestAPIStatus.ERROR -> {
-                            Toast.makeText(requireContext(), "NetworkError", Toast.LENGTH_LONG).show()
+                            Toast.makeText(requireContext(), "NetworkError", Toast.LENGTH_LONG)
+                                .show()
                         }
                         RestAPIStatus.LOADING -> {
-                            Toast.makeText(requireContext(), "Loading please wait...", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                requireContext(),
+                                "Loading please wait...",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                     }
                 }
-            }else{
-                Toast.makeText(requireContext(), "Enter a macro of full form", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(requireContext(), "Enter a macro of full form", Toast.LENGTH_LONG)
+                    .show()
             }
         }
     }
 
 
-    companion object{
+    companion object {
         fun getNavigationOptions(): NavOptions? {
             return NavOptions.Builder()
                 .setLaunchSingleTop(true) // Used to prevent multiple copies of the same destination
