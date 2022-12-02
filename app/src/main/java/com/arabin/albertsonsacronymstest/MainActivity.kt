@@ -1,19 +1,12 @@
-package com.arabin.AlbertsonsAcronymsTest
+package com.arabin.albertsonsacronymstest
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.arabin.AlbertsonsAcronymsTest.databinding.ActivityMainBinding
-import com.arabin.AlbertsonsAcronymsTest.retrofit.Response
-import com.arabin.AlbertsonsAcronymsTest.retrofit.RestAPIStatus
-import com.arabin.AlbertsonsAcronymsTest.retrofit.viewmodel.ResponseViewModel
-import com.google.android.material.snackbar.Snackbar
+import com.arabin.albertsonsacronymstest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

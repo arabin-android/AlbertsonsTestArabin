@@ -1,8 +1,8 @@
-package com.arabin.AlbertsonsAcronymsTest.retrofit.viewmodel
+package com.arabin.albertsonsacronymstest.retrofit.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.arabin.AlbertsonsAcronymsTest.retrofit.Response
+import com.arabin.albertsonsacronymstest.retrofit.Response
 
 class ShareDataViewModel: ViewModel() {
 

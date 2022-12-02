@@ -1,4 +1,4 @@
-package com.arabin.AlbertsonsAcronymsTest.retrofit
+package com.arabin.albertsonsacronymstest.retrofit
 
 class Response : ArrayList<ResponseItem>()
 

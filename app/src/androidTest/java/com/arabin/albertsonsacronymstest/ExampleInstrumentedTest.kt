@@ -1,4 +1,4 @@
-package com.arabin.AlbertsonsAcronymsTest
+package com.arabin.albertsonsacronymstest
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

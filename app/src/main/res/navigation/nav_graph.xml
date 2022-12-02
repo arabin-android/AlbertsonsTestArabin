@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/enter_fragment"
-        android:name="com.arabin.AlbertsonsAcronymsTest.fragments.EnterMacroFragment"
+        android:name="com.arabin.albertsonsacronymstest.fragments.EnterMacroFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/entermacro_fragment">
     </fragment>
     <fragment
         android:id="@+id/details_fragment"
-        android:name="com.arabin.AlbertsonsAcronymsTest.fragments.DetailsMacroFragment"
+        android:name="com.arabin.albertsonsacronymstest.fragments.DetailsMacroFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_details_macro">
     </fragment>

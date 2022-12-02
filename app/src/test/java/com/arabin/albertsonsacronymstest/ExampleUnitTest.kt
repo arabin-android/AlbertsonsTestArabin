@@ -1,4 +1,4 @@
-package com.arabin.AlbertsonsAcronymsTest
+package com.arabin.albertsonsacronymstest
 
 import org.junit.Test
 

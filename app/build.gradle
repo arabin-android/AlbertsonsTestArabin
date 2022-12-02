@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.arabin.AlbertsonsAcronymsTest'
+    namespace 'com.arabin.albertsonsacronymstest'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.arabin.AlbertsonsAcronymsTest"
+        applicationId "com.arabin.albertsonsacronymstest"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -33,6 +33,11 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {

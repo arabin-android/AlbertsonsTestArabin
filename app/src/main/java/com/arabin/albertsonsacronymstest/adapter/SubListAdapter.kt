@@ -1,12 +1,10 @@
-package com.arabin.AlbertsonsAcronymsTest.adapter
+package com.arabin.albertsonsacronymstest.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.arabin.AlbertsonsAcronymsTest.databinding.ItemsSubListItem2Binding
-import com.arabin.AlbertsonsAcronymsTest.databinding.ItemsSubListItemBinding
-import com.arabin.AlbertsonsAcronymsTest.retrofit.Lf
-import com.arabin.AlbertsonsAcronymsTest.retrofit.Var
+import com.arabin.albertsonsacronymstest.databinding.ItemsSubListItemBinding
+import com.arabin.albertsonsacronymstest.retrofit.Lf
 
 class SubListAdapter(items: List<Lf>) : RecyclerView.Adapter<SubListAdapter.SubViewHolder>() {
 

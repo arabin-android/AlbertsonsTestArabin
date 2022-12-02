@@ -1,10 +1,10 @@
-package com.arabin.AlbertsonsAcronymsTest.adapter
+package com.arabin.albertsonsacronymstest.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.arabin.AlbertsonsAcronymsTest.databinding.ItemsSubListItem2Binding
-import com.arabin.AlbertsonsAcronymsTest.retrofit.Var
+import com.arabin.albertsonsacronymstest.databinding.ItemsSubListItem2Binding
+import com.arabin.albertsonsacronymstest.retrofit.Var
 
 class LastAdapter(items: List<Var>) : RecyclerView.Adapter<LastAdapter.LastViewHolder>() {
 

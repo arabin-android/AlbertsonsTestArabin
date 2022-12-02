@@ -1,6 +1,5 @@
-package com.arabin.AlbertsonsAcronymsTest.retrofit
+package com.arabin.albertsonsacronymstest.retrofit
 
-import android.content.Context
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

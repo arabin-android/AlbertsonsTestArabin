@@ -1,7 +1,7 @@
-package com.arabin.AlbertsonsAcronymsTest
+package com.arabin.albertsonsacronymstest
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.arabin.AlbertsonsAcronymsTest.fragments.EnterMacroFragment
+import com.arabin.albertsonsacronymstest.fragments.EnterMacroFragment
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith

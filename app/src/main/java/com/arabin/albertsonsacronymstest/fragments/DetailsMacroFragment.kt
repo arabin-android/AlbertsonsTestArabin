@@ -1,4 +1,4 @@
-package com.arabin.AlbertsonsAcronymsTest.fragments
+package com.arabin.albertsonsacronymstest.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.arabin.AlbertsonsAcronymsTest.adapter.MainAdapter
-import com.arabin.AlbertsonsAcronymsTest.databinding.FragmentDetailsMacroBinding
-import com.arabin.AlbertsonsAcronymsTest.retrofit.viewmodel.ShareDataViewModel
+import com.arabin.albertsonsacronymstest.adapter.MainAdapter
+import com.arabin.albertsonsacronymstest.databinding.FragmentDetailsMacroBinding
+import com.arabin.albertsonsacronymstest.retrofit.viewmodel.ShareDataViewModel
 
 /**
  * An example full-screen fragment that shows and hides the system UI (i.e.

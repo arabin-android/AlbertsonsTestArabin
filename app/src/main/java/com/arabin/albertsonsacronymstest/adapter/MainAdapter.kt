@@ -1,10 +1,10 @@
-package com.arabin.AlbertsonsAcronymsTest.adapter
+package com.arabin.albertsonsacronymstest.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.arabin.AlbertsonsAcronymsTest.databinding.DetailsItemsCellBinding
-import com.arabin.AlbertsonsAcronymsTest.retrofit.ResponseItem
+import com.arabin.albertsonsacronymstest.databinding.DetailsItemsCellBinding
+import com.arabin.albertsonsacronymstest.retrofit.ResponseItem
 
 class MainAdapter(items: ArrayList<ResponseItem>) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
