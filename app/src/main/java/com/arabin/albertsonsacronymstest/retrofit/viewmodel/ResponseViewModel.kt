@@ -1,5 +1,6 @@
 package com.arabin.albertsonsacronymstest.retrofit.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,12 +16,16 @@ class ResponseViewModel : ViewModel() {
     private var restApiHelper: RestAPIService? = null
     var macroShort: String? = null
     var macroFull: String? = null
-    var _data: MutableLiveData<RestAPIState<Response?>?>? = null
-    var emptyString: MutableLiveData<String?>? = null
+    private var _data: MutableLiveData<RestAPIState<Response?>?>? = null
+    val data: LiveData<RestAPIState<Response?>?>?
+        get() = _data
+    private var _emptyString: MutableLiveData<String?>? = null
+    val emptyString : LiveData<String?>?
+        get() = _emptyString
 
     init {
         restApiHelper = RestAPIBuilder.build()
-        emptyString = MutableLiveData(null)
+        _emptyString = MutableLiveData(null)
         _data = MutableLiveData(RestAPIState.idleState(data = null))
     }
 
@@ -52,12 +57,12 @@ class ResponseViewModel : ViewModel() {
             _data?.postValue(RestAPIState.loading(data = null, "Loading please wait..."))
             getAcronym(macroShort, macroFull)
         } else {
-            emptyString?.postValue("Enter a macro or full-form")
+            _emptyString?.postValue("Enter a macro or full-form")
         }
     }
 
     fun clearViewModel() {
-        emptyString?.postValue(null)
+        _emptyString?.postValue(null)
         _data?.postValue(null)
     }
 }

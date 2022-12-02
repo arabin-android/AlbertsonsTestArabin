@@ -60,7 +60,7 @@ class EnterMacroFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        responseViewModel._data?.observe(viewLifecycleOwner) {
+        responseViewModel.data?.observe(viewLifecycleOwner) {
             when (it?.status) {
                 RestAPIStatus.SUCCESS -> {
                     val data = it.data
