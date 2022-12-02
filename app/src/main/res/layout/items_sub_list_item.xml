@@ -1,42 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sub_name"
-        android:text="dummy"/>
+    <data>
+        <variable
+            name="lasAdapter"
+            type="com.arabin.albertsonsacronymstest.adapter.LastAdapter" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:id="@+id/freq"
-        app:layout_constraintStart_toEndOf="@id/sub_name"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="dummy"/>
+        <variable
+            name="model"
+            type="com.arabin.albertsonsacronymstest.retrofit.Lf" />
+    </data>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:id="@+id/since"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="dummy"
-        app:layout_constraintStart_toEndOf="@id/freq"/>
-
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sub_list"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/since"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="wrap_content">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sub_name"
+            android:text="@{model.component2()}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:id="@+id/freq"
+            app:layout_constraintStart_toEndOf="@id/sub_name"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text='@{ model.component1() > 0 ? Integer.toString(model.component1()): ""}' />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:id="@+id/since"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text='@{ model.component3() > 0 ? Integer.toString(model.component3()): ""}'
+            app:layout_constraintStart_toEndOf="@id/freq"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sub_list"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/since"
+            android:layout_marginTop="10dp"
+            android:adapter="@{lasAdapter}"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

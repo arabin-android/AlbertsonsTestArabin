@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.arabin.albertsonsacronymstest.R
 import com.arabin.albertsonsacronymstest.adapter.MainAdapter
 import com.arabin.albertsonsacronymstest.databinding.FragmentDetailsMacroBinding
 import com.arabin.albertsonsacronymstest.retrofit.viewmodel.ShareDataViewModel
@@ -24,7 +26,8 @@ class DetailsMacroFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        fragmentDetailsBinding = FragmentDetailsMacroBinding.inflate(inflater, container, false)
+        fragmentDetailsBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_details_macro, container, false)
         return fragmentDetailsBinding?.root
     }
 
@@ -38,11 +41,7 @@ class DetailsMacroFragment : Fragment() {
         }
 
         shareDataViewModel.response.observe(viewLifecycleOwner) { resp ->
-            fragmentDetailsBinding?.apply {
-                subMacro.apply {
-                    adapter = MainAdapter(resp)
-                }
-            }
+            fragmentDetailsBinding?.mainAdapter = MainAdapter(resp)
         }
     }
 }

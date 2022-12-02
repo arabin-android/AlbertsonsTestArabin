@@ -2,12 +2,14 @@ package com.arabin.albertsonsacronymstest.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.arabin.albertsonsacronymstest.R
 import com.arabin.albertsonsacronymstest.databinding.DetailsItemsCellBinding
 import com.arabin.albertsonsacronymstest.retrofit.ResponseItem
 
-class MainAdapter(items: ArrayList<ResponseItem>) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
-
+class MainAdapter(items: ArrayList<ResponseItem>) :
+    RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
     private var mainList: List<ResponseItem>? = null
 
@@ -15,13 +17,13 @@ class MainAdapter(items: ArrayList<ResponseItem>) : RecyclerView.Adapter<MainAda
         mainList = items
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
         return MainViewHolder(
-            binding = DetailsItemsCellBinding.inflate(
-                LayoutInflater.from(
-                    parent.context
-                ), parent, false
+            binding = DataBindingUtil.inflate(
+                LayoutInflater.from(parent.context),
+                R.layout.details_items_cell,
+                parent,
+                false
             )
         )
     }
@@ -36,12 +38,10 @@ class MainAdapter(items: ArrayList<ResponseItem>) : RecyclerView.Adapter<MainAda
 
     class MainViewHolder(private val binding: DetailsItemsCellBinding) :
         RecyclerView.ViewHolder(binding.root) {
-            fun setDetails(item: ResponseItem){
-                binding.mainMacro.text = item.sf
-                binding.subMacro.apply {
-                    adapter = SubListAdapter(item.lfs)
-                }
-            }
+        fun setDetails(item: ResponseItem) {
+            binding.responseItem = item
+            binding.subListAdapter = SubListAdapter(item.lfs)
+        }
 
     }
 

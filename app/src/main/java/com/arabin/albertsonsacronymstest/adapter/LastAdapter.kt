@@ -2,7 +2,9 @@ package com.arabin.albertsonsacronymstest.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.arabin.albertsonsacronymstest.R
 import com.arabin.albertsonsacronymstest.databinding.ItemsSubListItem2Binding
 import com.arabin.albertsonsacronymstest.retrofit.Var
 
@@ -18,10 +20,11 @@ class LastAdapter(items: List<Var>) : RecyclerView.Adapter<LastAdapter.LastViewH
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LastViewHolder {
         return LastViewHolder(
-            binding = ItemsSubListItem2Binding.inflate(
-                LayoutInflater.from(
-                    parent.context
-                ), parent, false
+            binding = DataBindingUtil.inflate(
+                LayoutInflater.from(parent.context),
+                R.layout.items_sub_list_item2,
+                parent,
+                false
             )
         )
     }
@@ -37,10 +40,8 @@ class LastAdapter(items: List<Var>) : RecyclerView.Adapter<LastAdapter.LastViewH
     class LastViewHolder(private val binding: ItemsSubListItem2Binding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun setDetails(item: Var){
-            binding.lf.text = item.lf
-            binding.freq.text = item.freq.toString()
-            binding.since.text = item.since.toString()
+        fun setDetails(item: Var) {
+            binding.model = item
         }
 
     }
