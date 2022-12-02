@@ -49,10 +49,10 @@ class ResponseViewModel : ViewModel() {
 
     fun onSubmitButtonClicked() {
         if (!macroShort.isNullOrBlank() || !macroFull.isNullOrBlank()) {
-            _data?.postValue(RestAPIState.loading(data = null))
+            _data?.postValue(RestAPIState.loading(data = null, "Loading please wait..."))
             getAcronym(macroShort, macroFull)
         } else {
-            emptyString?.postValue("Enter a macro of full form")
+            emptyString?.postValue("Enter a macro or full-form")
         }
     }
 

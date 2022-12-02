@@ -64,26 +64,29 @@ class EnterMacroFragment : Fragment() {
             when (it?.status) {
                 RestAPIStatus.SUCCESS -> {
                     val data = it.data
-                    data?.let { it1 -> shareDataViewModel.setResponse(it1) }
-                    val navController = Navigation.findNavController(
-                        requireActivity(),
-                        R.id.nav_host_fragment
-                    )
-                    navController.navigate(
-                        R.id.details_fragment,
-                        null,
-                        getNavigationOptions()
-                    )
+                    if (data?.size!! >0){
+                        data.let { it1 -> shareDataViewModel.setResponse(it1) }
+                        val navController = Navigation.findNavController(
+                            requireActivity(),
+                            R.id.nav_host_fragment
+                        )
+                        navController.navigate(
+                            R.id.details_fragment,
+                            null,
+                            getNavigationOptions()
+                        )
+                    }else
+                        Toast.makeText(requireContext(), "No data found", Toast.LENGTH_SHORT).show()
                 }
                 RestAPIStatus.ERROR -> {
-                    Toast.makeText(requireContext(), "NetworkError", Toast.LENGTH_LONG)
+                    Toast.makeText(requireContext(), "NetworkError", Toast.LENGTH_SHORT)
                         .show()
                 }
                 RestAPIStatus.LOADING -> {
                     Toast.makeText(
                         requireContext(),
-                        "Loading please wait...",
-                        Toast.LENGTH_LONG
+                        it.message,
+                        Toast.LENGTH_SHORT
                     ).show()
                 }
                 else -> {}

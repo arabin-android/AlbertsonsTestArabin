@@ -7,7 +7,7 @@ data class RestAPIState<out T>(val status: RestAPIStatus, val data: T?, val mess
         fun <T> error(data: T?, message: String): RestAPIState<T> =
             RestAPIState(status = RestAPIStatus.ERROR, data = data, message = message)
 
-        fun <T> loading(data: T?): RestAPIState<T> = RestAPIState(status = RestAPIStatus.LOADING, data = data, message = null)
+        fun <T> loading(data: T?, message: String): RestAPIState<T> = RestAPIState(status = RestAPIStatus.LOADING, data = data, message = message)
         fun <T> idleState(data: T?): RestAPIState<T> = RestAPIState(status = RestAPIStatus.IDLE, data = data, message = null)
 
     }
