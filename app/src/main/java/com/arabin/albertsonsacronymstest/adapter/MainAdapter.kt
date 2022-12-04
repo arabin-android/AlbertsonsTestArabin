@@ -8,6 +8,13 @@ import com.arabin.albertsonsacronymstest.R
 import com.arabin.albertsonsacronymstest.databinding.DetailsItemsCellBinding
 import com.arabin.albertsonsacronymstest.retrofit.ResponseItem
 
+/**
+ * @author Arabin
+ * @since 12/01/2022
+ * @sample AlbertSons
+ * */
+
+
 class MainAdapter(items: ArrayList<ResponseItem>) :
     RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 

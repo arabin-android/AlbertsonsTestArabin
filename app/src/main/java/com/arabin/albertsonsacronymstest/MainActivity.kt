@@ -9,6 +9,13 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.arabin.albertsonsacronymstest.databinding.ActivityMainBinding
 
+
+/**
+ * @author Arabin
+ * @since 12/01/2022
+ * @sample AlbertSons
+ * */
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration

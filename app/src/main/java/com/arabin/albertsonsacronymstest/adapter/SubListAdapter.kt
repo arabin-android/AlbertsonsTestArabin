@@ -8,6 +8,13 @@ import com.arabin.albertsonsacronymstest.R
 import com.arabin.albertsonsacronymstest.databinding.ItemsSubListItemBinding
 import com.arabin.albertsonsacronymstest.retrofit.Lf
 
+/**
+ * @author Arabin
+ * @since 12/01/2022
+ * @sample AlbertSons
+ * */
+
+
 class SubListAdapter(items: List<Lf>) : RecyclerView.Adapter<SubListAdapter.SubViewHolder>() {
 
     private var mainList: List<Lf>? = null

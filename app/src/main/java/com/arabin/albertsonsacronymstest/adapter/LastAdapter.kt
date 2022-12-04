@@ -8,6 +8,13 @@ import com.arabin.albertsonsacronymstest.R
 import com.arabin.albertsonsacronymstest.databinding.ItemsSubListItem2Binding
 import com.arabin.albertsonsacronymstest.retrofit.Var
 
+/**
+ * @author Arabin
+ * @since 12/01/2022
+ * @sample AlbertSons
+ * */
+
+
 class LastAdapter(items: List<Var>) : RecyclerView.Adapter<LastAdapter.LastViewHolder>() {
 
 

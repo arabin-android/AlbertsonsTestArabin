@@ -1,5 +1,12 @@
 package com.arabin.albertsonsacronymstest.retrofit
 
+/**
+ * @author Arabin
+ * @since 12/01/2022
+ * @sample AlbertSons
+ * */
+
+
 class Response : ArrayList<ResponseItem>()
 
 data class ResponseItem(

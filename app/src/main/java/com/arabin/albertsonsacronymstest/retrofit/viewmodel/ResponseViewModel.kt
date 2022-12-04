@@ -11,6 +11,13 @@ import com.arabin.albertsonsacronymstest.retrofit.RestAPIState
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
+/**
+ * @author Arabin
+ * @since 12/01/2022
+ * @sample AlbertSons
+ * */
+
+
 class ResponseViewModel : ViewModel() {
 
     private var restApiHelper: RestAPIService? = null
@@ -24,7 +31,7 @@ class ResponseViewModel : ViewModel() {
         get() = _emptyString
 
     init {
-        restApiHelper = RestAPIBuilder.build()
+        restApiHelper = RestAPIBuilder.getInstance()
         _emptyString = MutableLiveData(null)
         _data = MutableLiveData(RestAPIState.idleState(data = null))
     }
