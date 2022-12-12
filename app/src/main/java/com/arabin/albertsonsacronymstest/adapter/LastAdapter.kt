@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.arabin.albertsonsacronymstest.R
 import com.arabin.albertsonsacronymstest.databinding.ItemsSubListItem2Binding
-import com.arabin.albertsonsacronymstest.retrofit.Var
+import com.arabin.retrofitmodule.retrofit.Var
 
 /**
  * @author Arabin
@@ -15,14 +15,7 @@ import com.arabin.albertsonsacronymstest.retrofit.Var
  * */
 
 
-class LastAdapter(items: List<Var>) : RecyclerView.Adapter<LastAdapter.LastViewHolder>() {
-
-
-    private var mainList: List<Var>? = null
-
-    init {
-        mainList = items
-    }
+class LastAdapter(private val items: List<com.arabin.retrofitmodule.retrofit.Var>) : RecyclerView.Adapter<LastAdapter.LastViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LastViewHolder {
@@ -37,17 +30,17 @@ class LastAdapter(items: List<Var>) : RecyclerView.Adapter<LastAdapter.LastViewH
     }
 
     override fun onBindViewHolder(holder: LastViewHolder, position: Int) {
-        mainList?.get(position)?.let { holder.setDetails(it) }
+        items[position].let { holder.setDetails(it) }
     }
 
     override fun getItemCount(): Int {
-        return mainList?.size!!
+        return items.size
     }
 
     class LastViewHolder(private val binding: ItemsSubListItem2Binding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun setDetails(item: Var) {
+        fun setDetails(item: com.arabin.retrofitmodule.retrofit.Var) {
             binding.model = item
         }
 

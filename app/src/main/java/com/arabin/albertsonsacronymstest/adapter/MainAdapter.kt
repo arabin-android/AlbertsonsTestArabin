@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.arabin.albertsonsacronymstest.R
 import com.arabin.albertsonsacronymstest.databinding.DetailsItemsCellBinding
-import com.arabin.albertsonsacronymstest.retrofit.ResponseItem
+import com.arabin.retrofitmodule.retrofit.ResponseItem
 
 /**
  * @author Arabin
@@ -15,14 +15,8 @@ import com.arabin.albertsonsacronymstest.retrofit.ResponseItem
  * */
 
 
-class MainAdapter(items: ArrayList<ResponseItem>) :
+class MainAdapter(private val items: ArrayList<com.arabin.retrofitmodule.retrofit.ResponseItem>) :
     RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
-
-    private var mainList: List<ResponseItem>? = null
-
-    init {
-        mainList = items
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
         return MainViewHolder(
@@ -36,16 +30,16 @@ class MainAdapter(items: ArrayList<ResponseItem>) :
     }
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-        mainList?.get(position)?.let { holder.setDetails(it) }
+        items[position].let { holder.setDetails(it) }
     }
 
     override fun getItemCount(): Int {
-        return mainList?.size!!
+        return items.size
     }
 
     class MainViewHolder(private val binding: DetailsItemsCellBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun setDetails(item: ResponseItem) {
+        fun setDetails(item: com.arabin.retrofitmodule.retrofit.ResponseItem) {
             binding.responseItem = item
             binding.subListAdapter = SubListAdapter(item.lfs)
         }

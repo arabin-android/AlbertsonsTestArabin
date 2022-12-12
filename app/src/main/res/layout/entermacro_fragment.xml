@@ -7,7 +7,7 @@
     <data>
         <variable
             name="responseViewModel"
-            type="com.arabin.albertsonsacronymstest.retrofit.viewmodel.ResponseViewModel" />
+            type="com.arabin.albertsonsacronymstest.viewmodel.ResponseViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,15 +16,46 @@
         android:layout_height="match_parent"
         tools:context=".fragments.EnterMacroFragment">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Bluetooth"
+            app:layout_constraintWidth_percent=".3"
+            android:id="@+id/bluetooth"
+            android:layout_marginTop="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bluetooth"
+            android:text="Bluetooth devices"
+            app:layout_constraintWidth_percent=".3"
+            android:id="@+id/bluetooth_devices"
+            android:layout_marginTop="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent=".3"
+            app:layout_constraintTop_toBottomOf="@id/bluetooth_devices"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/service"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Enter Short Form"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/service"
             app:layout_constraintStart_toStartOf="@id/macro_text"
-            android:id="@+id/macro_title"/>
+            android:id="@+id/macro_title"
+            app:layout_constraintWidth_percent=".3"
+            android:layout_marginTop="10dp"/>
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/macro_text"
@@ -67,6 +98,8 @@
             app:layout_constraintTop_toBottomOf="@id/full_form"
             android:onClick="@{()-> responseViewModel.onSubmitButtonClicked()}"
             />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -10,7 +10,7 @@
 
         <variable
             name="model"
-            type="com.arabin.albertsonsacronymstest.retrofit.Lf" />
+            type="com.arabin.retrofitmodule.retrofit.Lf" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

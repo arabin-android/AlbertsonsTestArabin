@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.arabin.albertsonsacronymstest.R
 import com.arabin.albertsonsacronymstest.adapter.MainAdapter
 import com.arabin.albertsonsacronymstest.databinding.FragmentDetailsMacroBinding
-import com.arabin.albertsonsacronymstest.retrofit.viewmodel.ShareDataViewModel
+import com.arabin.albertsonsacronymstest.viewmodel.ShareDataViewModel
 
 /**
  * An example full-screen fragment that shows and hides the system UI (i.e.

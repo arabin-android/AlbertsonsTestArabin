@@ -6,7 +6,7 @@
     <data>
         <variable
             name="responseItem"
-            type="com.arabin.albertsonsacronymstest.retrofit.ResponseItem" />
+            type="com.arabin.retrofitmodule.retrofit.ResponseItem" />
 
         <variable
             name="subListAdapter"
